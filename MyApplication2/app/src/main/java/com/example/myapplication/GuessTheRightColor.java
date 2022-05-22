@@ -11,7 +11,10 @@ import java.util.Random;
 
 public class GuessTheRightColor extends AppCompatActivity {
     TextView RightCounter;
+    TextView wrongChoice;
     TextView WrongCounter;
+    String bTNcOLOR;
+    int visability;
     Button Guess;
     Button rightOption;
     Button option2;
@@ -65,6 +68,7 @@ public class GuessTheRightColor extends AppCompatActivity {
                 if (count<2)
                 {
                     String value=randomColor();
+                    bTNcOLOR=value;
                     Guess.setText(value);
                     Random randomNum=new Random();
                     String[] optionArray=new String[3];
@@ -153,6 +157,10 @@ public class GuessTheRightColor extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         Guess.setText("Right(click me)");
+                        wrongChoice=findViewById(R.id.wrongChoice);
+
+                        wrongChoice.setVisibility(View.INVISIBLE);
+
                         Guess.setBackgroundColor(getResources().getColor(R.color.green));
                         count=0;
                         RightcolorNumber=0;
@@ -165,10 +173,11 @@ public class GuessTheRightColor extends AppCompatActivity {
                 option2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-//                        Guess.setText("Wrong(click me)");
+                        Guess.setText(bTNcOLOR);
+                        wrongChoice=findViewById(R.id.wrongChoice);
+                        wrongChoice.setVisibility(visability);
                         Guess.setBackgroundColor(getResources().getColor(R.color.red));
                         FailedCount=FailedCount+1;
-
                         WrongCounter=findViewById(R.id.failedCount);
                         WrongCounter.setText((""+FailedCount));
                     }
@@ -176,7 +185,11 @@ public class GuessTheRightColor extends AppCompatActivity {
                 option3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-//                        Guess.setText("Wrong(click m)");
+                        Guess.setText(bTNcOLOR);
+                        wrongChoice=findViewById(R.id.wrongChoice);
+
+                        wrongChoice.setVisibility(visability);
+
                         Guess.setBackgroundColor(getResources().getColor(R.color.red));
                         FailedCount=FailedCount+1;
                         WrongCounter=findViewById(R.id.failedCount
