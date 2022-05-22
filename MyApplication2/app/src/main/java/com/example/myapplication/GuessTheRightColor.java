@@ -165,7 +165,7 @@ public class GuessTheRightColor extends AppCompatActivity {
                 option2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Guess.setText("Wrong(click me)");
+//                        Guess.setText("Wrong(click me)");
                         Guess.setBackgroundColor(getResources().getColor(R.color.red));
                         FailedCount=FailedCount+1;
 
@@ -176,7 +176,7 @@ public class GuessTheRightColor extends AppCompatActivity {
                 option3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Guess.setText("Wrong(click me)");
+//                        Guess.setText("Wrong(click m)");
                         Guess.setBackgroundColor(getResources().getColor(R.color.red));
                         FailedCount=FailedCount+1;
                         WrongCounter=findViewById(R.id.failedCount
