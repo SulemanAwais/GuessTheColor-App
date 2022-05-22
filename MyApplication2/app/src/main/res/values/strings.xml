@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="learnColors">Learn Colors</string>
+    <string name="black">black</string>
+    <string name="white">white</string>
+    <string name="pink">pink</string>
+    <string name="red">red</string>
+    <string name="blue">blue</string>
+    <string name="grey">grey</string>
+    <string name="green">green</string>
+    <string name="orange">orange</string>
+    <string name="purple">purple</string>
+    <string name="yellow">yellow</string>
+    <string name="quizBtn">Guess the color</string>
+    <string name="Fc"></string>
+    <string name="Rc"></string>
+
+
+
+</resources>
