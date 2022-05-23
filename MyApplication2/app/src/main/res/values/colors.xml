@@ -15,5 +15,8 @@
     <color name="yellow">#FFC107</color>
     <color name="green">#00FF0A</color>
     <color name="grey">#424342</color>
+    <color name="LightBlue">#00BCD4</color>
+
+    LightBlue
 
 </resources>
