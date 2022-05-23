@@ -13,6 +13,7 @@ import java.util.Random;
 
 public class GuessTheRightColor extends AppCompatActivity {
     TextView RightCounter;
+    Button backBtn;
     TextView wrongChoice;
     TextView WrongCounter;
     String bTNcOLOR="null";
@@ -57,7 +58,13 @@ public class GuessTheRightColor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guess_the_right_color);
 
-
+        backBtn=findViewById(R.id.MainMenuBtn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         Guess = findViewById(R.id.guessBtn);
         WrongCounter=findViewById(R.id.FailedCount);
 
