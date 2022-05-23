@@ -10,6 +10,8 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     Button learnColorsBtn;
     Button quizBtn;
+    Button ContactBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +28,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         quizBtn=findViewById(R.id.quizButtonId);
-
+        ContactBtn=findViewById(R.id.contactUs);
+        ContactBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,GitLink.class);
+                startActivity(intent);
+            }
+        });
         quizBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
