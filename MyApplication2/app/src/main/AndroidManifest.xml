@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".GitLink"
+            android:exported="false" />
+        <activity
             android:name=".GuessTheRightColor"
             android:exported="false" />
         <activity
