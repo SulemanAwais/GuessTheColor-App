@@ -1,9 +1,11 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,15 +15,16 @@ public class GuessTheRightColor extends AppCompatActivity {
     TextView RightCounter;
     TextView wrongChoice;
     TextView WrongCounter;
-    String bTNcOLOR;
+    String bTNcOLOR="null";
+    String correctOption="null";
     int visability;
     Button Guess;
     Button rightOption;
     Button option2;
     Button option3;
-    int RightcolorNumber;
-    int wrongOptionColor1;
-    int wrongOptionColor2;
+    int RightcolorNumber=0;
+    int wrongOptionColor1=0;
+    int wrongOptionColor2=0;
     int rightCount=0;
     int FailedCount=0;
     static int count=0;
@@ -48,6 +51,7 @@ public class GuessTheRightColor extends AppCompatActivity {
     }
     //extra function
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +71,7 @@ public class GuessTheRightColor extends AppCompatActivity {
 
                 if (count<2)
                 {
+
                     String value=randomColor();
                     bTNcOLOR=value;
                     Guess.setText(value);
@@ -76,7 +81,7 @@ public class GuessTheRightColor extends AppCompatActivity {
                     optionArray[1]="option2";
                     optionArray[2]="option3";
                     int num=randomNum.nextInt(3-0);
-                    String correctOption=optionArray[num];
+                    correctOption=optionArray[num];
                     //
 
                     if (correctOption.equals("option1"))
@@ -85,6 +90,9 @@ public class GuessTheRightColor extends AppCompatActivity {
                         rightOption.setBackgroundColor(getResources().getColor(RColor[RightcolorNumber]));
                             option3=findViewById(R.id.option2);
                             option2=findViewById(R.id.option3);
+                        rightOption.setVisibility(view.VISIBLE);
+                        option2.setVisibility(view.VISIBLE);
+                        option3.setVisibility(view.VISIBLE);
                         wrongOptionColor1=randomNum.nextInt(10);
                         Random rnd=new Random();
                         wrongOptionColor2=rnd.nextInt(10);
@@ -110,6 +118,9 @@ public class GuessTheRightColor extends AppCompatActivity {
                         rightOption.setBackgroundColor(getResources().getColor(RColor[RightcolorNumber]));
                             option2 = findViewById(R.id.option1);
                             option3 = findViewById(R.id.option3);
+                        rightOption.setVisibility(view.VISIBLE);
+                        option2.setVisibility(view.VISIBLE);
+                        option3.setVisibility(view.VISIBLE);
                         wrongOptionColor1=randomNum.nextInt(10);
                         Random rnd=new Random();
                         wrongOptionColor2=rnd.nextInt(10);
@@ -134,6 +145,9 @@ public class GuessTheRightColor extends AppCompatActivity {
                         rightOption.setBackgroundColor(getResources().getColor(RColor[RightcolorNumber]));
                         option2 = findViewById(R.id.option1);
                         option3 = findViewById(R.id.option2);
+                        rightOption.setVisibility(view.VISIBLE);
+                        option2.setVisibility(view.VISIBLE);
+                        option3.setVisibility(view.VISIBLE);
                         wrongOptionColor1=randomNum.nextInt(10);
                         Random rnd=new Random();
                         wrongOptionColor2=rnd.nextInt(10);
@@ -158,7 +172,9 @@ public class GuessTheRightColor extends AppCompatActivity {
                     public void onClick(View view) {
                         Guess.setText("Right(click me)");
                         wrongChoice=findViewById(R.id.wrongChoice);
-
+                        rightOption.setVisibility(view.INVISIBLE);
+                        option2.setVisibility(view.INVISIBLE);
+                        option3.setVisibility(view.INVISIBLE);
                         wrongChoice.setVisibility(View.INVISIBLE);
 
                         Guess.setBackgroundColor(getResources().getColor(R.color.green));
@@ -204,7 +220,34 @@ public class GuessTheRightColor extends AppCompatActivity {
 
 
         });
-
-
     }
+
+//    @Override
+//    protected void onSaveInstanceState( Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        outState.putString("RightColor",bTNcOLOR);
+//        outState.putString("RightButton",correctOption);
+//        outState.putInt("count",count);
+//        outState.putInt("RightcolorNumber",RightcolorNumber);
+//        outState.putInt("WrongOptColor1",wrongOptionColor1);
+//        outState.putInt("WrongOptColor2",wrongOptionColor2);
+//        outState.putInt("rightCount",rightCount);
+//        outState.putInt("FailedCount",FailedCount);
+//    }
+//
+//    @Override
+//    protected void onRestoreInstanceState( Bundle savedInstanceState)
+//    {
+//        super.onRestoreInstanceState(savedInstanceState);
+////        RightCounter=findViewById(R.id.rightCount2);
+//        RightCounter.setText(savedInstanceState.getInt("rightCount"));
+////        WrongCounter=findViewById(R.id.failedCount);
+//        WrongCounter.setText(savedInstanceState.getInt("FailedCount"));
+////        rightOption.setBackgroundColor(getResources().getColor(RColor[savedInstanceState.getInt()]));
+////        option2.setBackgroundColor(getResources().getColor(RColor[wrongOptionColor1]));
+////        option3.setBackgroundColor(getResources().getColor(RColor[wrongOptionColor2]));
+//
+//
+//
+//    }
 }
