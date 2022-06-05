@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.344" />
+        app:layout_constraintVertical_bias="0.26" />
 
     <Button
         android:id="@+id/quizButtonId"
@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/learnBtn"
-        app:layout_constraintVertical_bias="0.145" />
+        app:layout_constraintVertical_bias="0.063" />
 
     <Button
         android:id="@+id/contactUs"
@@ -38,5 +38,16 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quizButtonId"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintVertical_bias="0.102" />
+
+    <Button
+        android:id="@+id/listViiewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Beta(Color List)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactUs" />
 </androidx.constraintlayout.widget.ConstraintLayout>
